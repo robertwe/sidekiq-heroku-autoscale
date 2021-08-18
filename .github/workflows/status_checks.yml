@@ -15,7 +15,7 @@ jobs:
       - name: Set runner-specific environment variables
         shell: bash
         run: |
-          echo "::set-env name=ImageOS=ubuntu-20.04"
+          echo "::set-env name=ImageOS=ubuntu20.04"
 
       - name: "All env vars"
         run: env
@@ -39,6 +39,10 @@ jobs:
         ruby: [2.5, 2.6, 2.7]
 
     steps:
+      - name: Set runner-specific environment variables
+        shell: bash
+        run: |
+          echo "::set-env name=ImageOS=ubuntu20.04"
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
