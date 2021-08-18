@@ -9,6 +9,8 @@ jobs:
   rubocop:
     name: Rubocop
     runs-on: [self-hosted, linux]
+    env:
+      ImageOS: ubuntu-20.04
     steps:
       - run: env && sleep 1200
       - uses: actions/checkout@v2
