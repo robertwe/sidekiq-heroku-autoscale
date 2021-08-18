@@ -12,7 +12,10 @@ jobs:
     env:
       ImageOS: ubuntu-20.04
     steps:
-      - run: env && sleep 1200
+      - name: "All env vars"
+        run: env
+      - name: "Sleeping"
+        run: sleep 300
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
