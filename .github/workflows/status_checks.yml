@@ -35,8 +35,8 @@ jobs:
       - name: active connections
         shell: bash
         run: |
-          docker ps
-          netstat -apnt
+          /usr/bin/docker ps
+          /usr/bin/ss
 
 
   rubocop:
