@@ -9,7 +9,9 @@ jobs:
 
   container-job:
     runs-on: [self-hosted, linux]
-    container: node:10.18-jessie
+    container:
+      image: node:10.18-jessie
+      options: --user 1000
     services:
       postgres:
         image: postgres
