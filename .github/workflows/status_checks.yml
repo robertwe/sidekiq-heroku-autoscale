@@ -71,6 +71,12 @@ jobs:
           echo "ImageOS=ubuntu20" >> $GITHUB_ENV
 
       - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: /opt/hostedtoolcache
+          key: ${{ runner.os }}-opt-hostedtoolcache
+          restore-keys: |
+            ${{ runner.os }}-opt-hostedtoolcache
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
