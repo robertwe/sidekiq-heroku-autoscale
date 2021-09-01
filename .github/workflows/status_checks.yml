@@ -34,7 +34,7 @@ jobs:
 
   rubocop:
     name: Rubocop
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, ubuntu-t3.medium]
     env:
       ImageOS: "ubuntu20.04"
     steps:
@@ -57,7 +57,7 @@ jobs:
 
   test:
     name: Tests
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, ubuntu-t3.medium]
 
     strategy:
       fail-fast: false
@@ -82,22 +82,3 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
       - run: bundle exec rake test
-## dummy change, iteration ==> 2
-## dummy change, iteration ==> 3
-## dummy change, iteration ==> 4
-## dummy change, iteration ==> 5
-## dummy change, iteration ==> 6
-## dummy change, iteration ==> 7
-## dummy change, iteration ==> 8
-## dummy change, iteration ==> 9
-## dummy change, iteration ==> 10
-## dummy change, iteration ==> 11
-## dummy change, iteration ==> 12
-## dummy change, iteration ==> 13
-## dummy change, iteration ==> 14
-## dummy change, iteration ==> 15
-## dummy change, iteration ==> 16
-## dummy change, iteration ==> 17
-## dummy change, iteration ==> 18
-## dummy change, iteration ==> 19
-## dummy change, iteration ==> 20
