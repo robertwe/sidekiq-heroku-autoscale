@@ -95,7 +95,7 @@ module Sidekiq
         # the series snaps to thresholds of N (throttle duration)
         series_time = (now.to_f / @throttle).floor * @throttle
         num_ticks = (@history / @throttle).floor
-        first_tick = series_time - @throttle * num_ticks
+        first_tick = series_time - (@throttle * num_ticks)
 
         # all ticks is a hash of timestamp keys to plot
         all_ticks = Array
