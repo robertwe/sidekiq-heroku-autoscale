@@ -101,7 +101,7 @@ module Sidekiq
         all_ticks = Array
                     .new(num_ticks)
                     .each_with_index
-                    .map { |_, i| (first_tick + @throttle * i).to_s }
+                    .map { |_, i| (first_tick + (@throttle * i)).to_s }
                     .each_with_object({}) { |tick, memo| memo[tick] = nil }
 
         # get current and previous history collections for each process
