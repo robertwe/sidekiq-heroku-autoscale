@@ -14,7 +14,7 @@ module Sidekiq
         api_token = config[:api_token] || ENV['SIDEKIQ_HEROKU_AUTOSCALE_API_TOKEN']
         @app_name = config[:app_name] || ENV['SIDEKIQ_HEROKU_AUTOSCALE_APP']
         @throttle = config[:throttle] || 10
-        @history = config[:history] || 60 * 60 # 1 hour
+        @history = config[:history] || ( 60 * 60 ) # 1 hour
         @client = api_token ? PlatformAPI.connect_oauth(api_token) : nil
 
         @processes_by_name = {}
